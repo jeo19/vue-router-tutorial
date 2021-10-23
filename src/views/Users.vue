@@ -5,8 +5,19 @@
       <p>Please search Users</p>
     </v-flex>
     <v-flex xs12>
-      <v-text-field label="Input the user number"></v-text-field>
-      <v-btn>Search</v-btn>
+      <v-text-field
+        label="Input the user number"
+        v-model="userId"
+      ></v-text-field>
+      <v-btn
+        @click="
+          $router.push({
+            name: 'users-detail',
+            params: { id: userId },
+          })
+        "
+        >Search</v-btn
+      >
     </v-flex>
     <v-flex xs12>
       <router-view></router-view>
@@ -15,10 +26,8 @@
 </template>
 <script>
 export default {
-  computed: {
-    userId() {
-      return this.$route.params.userId;
-    },
+  data() {
+    return { userId: null };
   },
 };
 </script>
