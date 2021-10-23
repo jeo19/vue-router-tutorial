@@ -16,8 +16,8 @@
             params: { id: userId },
           })
         "
-        >Search</v-btn
-      >
+        >Search
+      </v-btn>
     </v-flex>
     <v-flex xs12>
       <router-view></router-view>

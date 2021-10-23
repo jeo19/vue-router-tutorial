@@ -12,6 +12,9 @@ const Users = () => {
 const UsersDetail = () => {
   return import(/* webpackChunkName: "about" */ "../views/UsersDetail.vue");
 };
+const UsersEdit = () => {
+  return import(/* webpackChunkName: "about" */ "../views/UsersEdit.vue");
+};
 const routes = [
   {
     path: "/",
@@ -32,6 +35,11 @@ const routes = [
         path: ":id",
         name: "users-detail",
         component: UsersDetail,
+      },
+      {
+        path: ":id/edit",
+        name: "users-edit",
+        component: UsersEdit,
       },
     ],
   },
